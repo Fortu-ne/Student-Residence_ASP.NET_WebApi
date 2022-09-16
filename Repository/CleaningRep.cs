@@ -20,10 +20,9 @@ namespace WepApiWithToken.Repository
             return _context.Cleanings.Any(r => r.CleaningId == id);
         }
 
-        public bool Create(/*int typeId, string studId,*/ CleaningService model)
+        public bool Create( CleaningService model)
         {
-            //model.CleaningTypeId = typeId;
-            //model.StudId = studId;
+            
             _context.Cleanings.Add(model);
 
             return Save();
@@ -62,11 +61,8 @@ namespace WepApiWithToken.Repository
             return saved > 0 ? true : false;
         }
 
-        public bool Update(/*int typeId, string studId,*/ CleaningService model)
+        public bool Update(CleaningService model)
         {
-
-            //model.CleaningTypeId = typeId;
-            //model.StudId = studId;
             _context.Update(model);
 
             return Save();

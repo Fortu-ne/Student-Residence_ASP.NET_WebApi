@@ -10,6 +10,7 @@ using WepApiWithToken.ViewModels;
 namespace WepApiWithToken.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class StudentController : Controller
     {
@@ -27,7 +28,7 @@ namespace WepApiWithToken.Controllers
         }
 
 
-        [HttpGet("List")/*,Authorize(Roles ="Admin")*/]
+        [HttpGet("List") ,Authorize(Roles ="Admin")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Student>))]
         [ProducesResponseType(400)]
         // IAction method to retrieve all students

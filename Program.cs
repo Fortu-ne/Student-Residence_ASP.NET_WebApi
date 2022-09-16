@@ -11,7 +11,7 @@ using WepApiWithToken.Helper;
 using WepApiWithToken.Interface;
 using WepApiWithToken.Model;
 using WepApiWithToken.Repository;
-using WepApiWithToken.Service;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +34,6 @@ builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 
 builder.Services.AddScoped<IAddress, AddressRep>();
-
 builder.Services.AddScoped<ICourse, CourseRep>();
 builder.Services.AddScoped<IGender, GenderRep>();
 builder.Services.AddScoped<IMaintenance, MaintenanceRep>();
@@ -42,7 +41,6 @@ builder.Services.AddScoped<IRooms, RoomRep>();
 builder.Services.AddScoped<IMaintenancetype, MaintenanceTypeRep>();
 builder.Services.AddScoped<IStatus, StatusRep>();
 builder.Services.AddScoped<ICleaning, CleaningRep>();
-//builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddHttpContextAccessor();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

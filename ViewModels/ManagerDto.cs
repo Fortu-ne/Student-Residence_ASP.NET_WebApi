@@ -1,6 +1,6 @@
 ﻿namespace WepApiWithToken.ViewModels
 {
-    public class ServiceManagementDto
+    public class ManagerDto
     {
         public string ManagerId { get; set; }
         public string UserName { get; set; }

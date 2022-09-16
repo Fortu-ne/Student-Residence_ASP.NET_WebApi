@@ -20,11 +20,9 @@ namespace WepApiWithToken.Repository
 
         }
 
-        public bool Create(/*int typeId, string studId,*/ Maintenance maintenance)
+        public bool Create( Maintenance maintenance)
         {
-            //maintenance.MaintenanceTypeId = typeId;
-            //maintenance.StudId = studId;
-          //  maintenance.StatusId = statusId;
+          
             _applicationDbContext.Add(maintenance);
             return Save();
         }
@@ -60,11 +58,9 @@ namespace WepApiWithToken.Repository
             return saved > 0 ? true : false;
         }
 
-        public bool Update(/*int typeId, string studId, int statusId,*/ Maintenance maintenance)
+        public bool Update(Maintenance maintenance)
         {
-            //maintenance.MaintenanceTypeId = typeId;
-            //maintenance.StudId = studId;
-            //maintenance.StatusId = statusId;
+            
             _applicationDbContext.Update(maintenance);
             return Save();
         }

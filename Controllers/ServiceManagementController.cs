@@ -29,7 +29,7 @@ namespace WepApiWithToken.Controllers
         // IAction method to retrieve all students
         public IActionResult GetAllManagers()
         {
-            var model = _mapper.Map<List<ServiceManagementDto>>(_servManager.GetAll());
+            var model = _mapper.Map<List<ManagerDto>>(_servManager.GetAll());
 
             if (!ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace WepApiWithToken.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult UpdateManager(string servicMgrId, ServiceManagementDto updateUser)
+        public IActionResult UpdateManager(string servicMgrId, ManagerDto updateUser)
         {
             if (updateUser == null)
                 return BadRequest(ModelState);
